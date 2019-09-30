@@ -17,17 +17,18 @@ import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping("/eeo")
-@Api(value = "E-Trade", description = "E-Trade swagger")
-public class ReleaseTaxController {
+@Api(value = "Release Tax import", description = "Release Tax Import")
+public class ReleaseTaxImportController {
 
-    @ApiOperation(value = "Release tax details")
+    @ApiOperation(value = "Submit Import Request API")
     @ApiResponses(
             value = {
                     @ApiResponse(code = 200, message = "Successful e-trade")
             }
     )
     @GetMapping("/async/ReleaseTax")
-    public ResponseBean hello(@RequestBody RequestBean requestBody) {
+    public ResponseBean submit(@RequestBody RequestBean requestBody) {
+      
         return new ResponseBean();
     }
     
