@@ -18,7 +18,7 @@ import io.swagger.annotations.ApiResponses;
 @RestController
 @RequestMapping("/eeo")
 @Api(value = "Release Tax import", description = "Release Tax Import")
-public class ReleaseTaxImportController {
+public class ReleaseTaxImport {
 
     @ApiOperation(value = "Submit Import Request API")
     @ApiResponses(
@@ -58,24 +58,12 @@ public class ReleaseTaxImportController {
                     
             }
     )
-    @GetMapping("/async/statusresult/{handle}")
+    @GetMapping("/async/result/{handle}")
     public ImportResultsResponse getImportRequestResult(@PathVariable String handle) {
         return new ImportResultsResponse();
     }
     
     
-   
-
-    @ApiOperation(value = "Returns Hello World")
-   // @PostMapping("/post")
-    public String helloPost(@RequestBody final String hello) {
-        return hello;
-    }
-
-    @ApiOperation(value = "Returns Hello World")
-   // @PutMapping("/put")
-    public String helloPut(@RequestBody final String hello) {
-        return hello;
-    }
+  
 }
 

@@ -22,21 +22,20 @@ public class RequestBean {
 
 	@ApiModelProperty(notes = "Data presention",name="data",required=true,value="Arrays of data.")
     @JsonProperty("data")
-    private List<Datum> data = null;
+    private List<ReleaseTax> data = null;
 	
 	@ApiModelProperty(notes = "Success Records info",name="includeSuccessRecords",required=true,value="Include Success data.")
     @JsonProperty("includeSuccessRecords")
     private String includeSuccessRecords;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("data")
-    public List<Datum> getData() {
+    public List<ReleaseTax> getData() {
         return data;
     }
 
     @JsonProperty("data")
-    public void setData(List<Datum> data) {
+    public void setData(List<ReleaseTax> data) {
         this.data = data;
     }
 
@@ -50,14 +49,5 @@ public class RequestBean {
         this.includeSuccessRecords = includeSuccessRecords;
     }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
 
 }
