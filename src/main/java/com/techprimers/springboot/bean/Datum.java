@@ -21,6 +21,8 @@ public class Datum {
   @Size(min = 1, max = 20)
   @JsonProperty("transactionId")
   private String transactionId;
+  @JsonProperty("result")
+  private Result result;
   @JsonProperty("taxes")
   private List<Tax> taxes = null;
   @JsonIgnore

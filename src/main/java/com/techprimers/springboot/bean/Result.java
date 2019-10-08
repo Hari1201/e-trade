@@ -2,7 +2,6 @@
 package com.techprimers.springboot.bean;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -13,36 +12,23 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "handle",
-    "errors"
+    "status"
 })
-public class ResponseBean {
+public class Result {
 
-    @JsonProperty("handle")
-    private String handle;
-    @JsonProperty("errors")
-    private List<Error> errors = null;
+    @JsonProperty("status")
+    private String status;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("handle")
-    public String getHandle() {
-        return handle;
+    @JsonProperty("status")
+    public String getStatus() {
+        return status;
     }
 
-    @JsonProperty("handle")
-    public void setHandle(String handle) {
-        this.handle = handle;
-    }
-
-    @JsonProperty("errors")
-    public List<Error> getErrors() {
-        return errors;
-    }
-
-    @JsonProperty("errors")
-    public void setErrors(List<Error> errors) {
-        this.errors = errors;
+    @JsonProperty("status")
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @JsonAnyGetter

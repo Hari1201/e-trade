@@ -2,7 +2,6 @@
 package com.techprimers.springboot.bean;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -13,36 +12,36 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "handle",
-    "errors"
+    "code",
+    "reason"
 })
-public class ResponseBean {
+public class Error {
 
-    @JsonProperty("handle")
-    private String handle;
-    @JsonProperty("errors")
-    private List<Error> errors = null;
+    @JsonProperty("code")
+    private String code;
+    @JsonProperty("reason")
+    private String reason;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("handle")
-    public String getHandle() {
-        return handle;
+    @JsonProperty("code")
+    public String getCode() {
+        return code;
     }
 
-    @JsonProperty("handle")
-    public void setHandle(String handle) {
-        this.handle = handle;
+    @JsonProperty("code")
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    @JsonProperty("errors")
-    public List<Error> getErrors() {
-        return errors;
+    @JsonProperty("reason")
+    public String getReason() {
+        return reason;
     }
 
-    @JsonProperty("errors")
-    public void setErrors(List<Error> errors) {
-        this.errors = errors;
+    @JsonProperty("reason")
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
     @JsonAnyGetter
